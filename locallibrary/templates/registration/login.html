@@ -28,12 +28,25 @@
         <h1 class="h3 mb-3 font-weight-normal" id="colorH1">BookStop</h1>
         <!--<p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, Firefox, and IE 10/11 (prefixed).</a></p>-->
       </div>
+      {% csrf_token %}
       <div>
+        <div class="row">
+          {{ form.username.errors }}
+            <label class="col-6" for="{{ form.username.id_for_label }}">Nombre de Usuario:</label>
+          {{ form.username }}
+        </div>
+        <div class="row mt-2 mb-2">
+          {{ form.password.errors }}
+            <label class="col-6" for="{{ form.password.id_for_label }}">Contraseña:</label>
+          {{ form.password }}
+        </div>
+      </div>
+      <!--div>
             {% csrf_token %}
-            <div>
+            <div class>
                 {{ form.as_p }}
             </div>
-      </div>
+      </div-->
       <!--<div class="form-label-group">
         <input type="email" id="inputEmail" class="form-control" placeholder="Correo electronico" required autofocus>
         <label for="inputEmail">Correo electrónico</label>
