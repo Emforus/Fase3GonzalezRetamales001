@@ -20,6 +20,10 @@ def index(request):
 def ranking(request):  
     books = Libro.objects.all()
     return render(request, 'ranking.html', context={'books':books,})  
+    
+def ranking_2(request):  
+    books = Libro.objects.all()
+    return render(request, 'ranking_2.html', context={'books':books,}) 
 
 def login(request):  
     return render(request, 'login.html')  
@@ -42,6 +46,7 @@ class EliminarLibro(DeleteView):
 
 class BookDetailView(generic.DetailView):
     model = Libro
+  
 
 
 class CrearAutor(CreateView):
