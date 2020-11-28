@@ -1,17 +1,18 @@
-{% extends "base_generic.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <main role="main" class="container">
-    <h3 class="lead" style="color: #596272"><strong>Datos del autor</strong></h3>
+    <h3 class="lead" style="color: #596272"><strong>Datos del autor</strong></h3><br>
     <div class="row" id="top10" style="box-shadow: none; background-color: #F8F9FA; margin-top: -54px;">
         <div class="col-6"></div> 
+        {% if user.is_authenticated %}
         <div class="col-3">
             <a href="{% url 'actualizar_autor' autor.pk %}" class="btn btn-info btn-block" role="button">Actualizar</a>
         </div>       
         <div class="col-3">           
             <a href="{% url 'eliminar_autor' autor.pk %}" class="btn btn-info btn-block" role="button">Eliminar</a>
         </div>    
-           
+        {% endif %}   
     </div>
     <div class="row" id="top10" >
         <div class="col-0">

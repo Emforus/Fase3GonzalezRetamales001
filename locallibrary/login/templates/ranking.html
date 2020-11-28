@@ -1,4 +1,4 @@
-{% extends "base_generic.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 <main role="main" class="container">
@@ -34,8 +34,13 @@
     </div>
     <div class="row pt-2 w-100" id="top10" style="box-shadow: none; background-color: #F8F9FA;">
         <div class="col-9">
-            <h3 class="lead" style="color: #596272"><strong>Ranking BookStop</strong></h3></div>
-               
+            <h3 class="lead" style="color: #596272"><strong>Ranking BookStop</strong></h3>
+        </div>  
+        {% if user.is_authenticated %}    
+        <div class="col-3">
+            <a href="{% url 'crear_libro' %}" class="btn btn-info btn-block" role="button">Agregar</a>
+        </div>     
+        {% endif %}     
     </div>
     <br>
     {% for book in books %}

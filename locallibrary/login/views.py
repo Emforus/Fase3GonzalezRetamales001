@@ -6,6 +6,7 @@ from .models import Libro, Autor, Genero
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.views import generic
+from django.views.generic import DetailView
 
 # Create your views here.
 def index(request):
@@ -21,15 +22,14 @@ def ranking(request):
     books = Libro.objects.all()
     return render(request, 'ranking.html', context={'books':books,})  
     
-def ranking_2(request):  
-    books = Libro.objects.all()
-    return render(request, 'ranking_2.html', context={'books':books,}) 
 
 def login(request):  
     return render(request, 'login.html')  
 
 def register(request):  
     return render(request, 'register.html')  
+ 
+
 
 
 class CrearLibro(CreateView):
