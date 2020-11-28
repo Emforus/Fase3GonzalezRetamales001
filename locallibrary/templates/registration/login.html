@@ -65,6 +65,9 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
       
       <a class="btn btn-lg btn-outline-success btn-block" href="{% url 'signup' %}" role="button" id="btnRegistrarse">Crear cuenta &raquo;</a>
+      {% load socialaccount %}
+      <a class="btn btn-lg btn-outline-success btn-block btn-outline" href="{% provider_login_url 'google' %}" role="button" id="btnGoogle">
+        <img src="https://img.icons8.com/color/16/000000/google-logo.png"> Iniciar sesión con google</a>
       
       <p class="mt-5 mb-3 text-muted text-center">&copy; BookStop - 2020</p>
     </form>

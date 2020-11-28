@@ -9,12 +9,12 @@
     <div class="row" id="top10" style="box-shadow: none; background-color: #F8F9FA; margin-top: -54px;">
     
         <div class="col-6"></div> 
-        {% if user.is_authenticated %}
+        {% if user.is_superuser %}
         <div class="col-3">
-            <a href="{% url 'actualizar_libro' libro.pk %}" class="btn btn-primary btn-block" role="button">Actualizar</a>
+            <a href="{% url 'actualizar_libro' libro.pk %}" class="btn btn-info btn-block" role="button">Actualizar</a>
         </div>       
         <div class="col-3">           
-            <a href="{% url 'eliminar_libro' libro.pk %}" class="btn btn-primary btn-block" role="button">Eliminar</a>
+            <a href="{% url 'eliminar_libro' libro.pk %}" class="btn btn-info btn-block" role="button">Eliminar</a>
         </div>    
         {% endif %}   
     </div>

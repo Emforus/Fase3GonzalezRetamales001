@@ -25,8 +25,8 @@ urlpatterns = [
     path('login/', include('login.urls')),
     path('accounts/', include('sesion.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('allauth.urls')),
     path('', TemplateView.as_view(template_name='home.html'), name= 'home'),
-
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
