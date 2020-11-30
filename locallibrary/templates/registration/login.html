@@ -18,6 +18,22 @@
 
     <!-- Custom styles for this template -->
     <link href="{% static 'css/floating-labels.css' %}" rel="stylesheet">
+
+    <style>
+
+      #input input {
+        width: 100%;
+        background-color: none;
+        color: black;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+
+      }
+
+    </style>
   </head>
   <body>
     <form class="form-signin" method="post">
@@ -30,12 +46,12 @@
       </div>
       {% csrf_token %}
       <div>
-        <div class="row">
+        <div id="input">
           {{ form.username.errors }}
             <label class="col-6" for="{{ form.username.id_for_label }}">Nombre de Usuario:</label>
           {{ form.username }}
         </div>
-        <div class="row mt-2 mb-2">
+        <div id="input">
           {{ form.password.errors }}
             <label class="col-6" for="{{ form.password.id_for_label }}">Contraseña:</label>
           {{ form.password }}
@@ -63,11 +79,14 @@
         </label>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
-      
-      <a class="btn btn-lg btn-outline-success btn-block" href="{% url 'signup' %}" role="button" id="btnRegistrarse">Crear cuenta &raquo;</a>
+      <p></p><p style="text-align: center;">o</p>
       {% load socialaccount %}
       <a class="btn btn-lg btn-outline-success btn-block btn-outline" href="{% provider_login_url 'google' %}" role="button" id="btnGoogle">
         <img src="https://img.icons8.com/color/16/000000/google-logo.png"> Iniciar sesión con google</a>
+      
+      <a class="btn btn-lg btn-outline-success btn-block" href="{% url 'signup' %}" role="button" id="btnRegistrarse">Crear cuenta &raquo;</a>
+      
+
       
       <p class="mt-5 mb-3 text-muted text-center">&copy; BookStop - 2020</p>
     </form>
