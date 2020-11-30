@@ -37,10 +37,10 @@
   </head>
   <body>
     <form class="form-signin" method="post">
-        
+
       <div class="text-center mb-4">
-        <a href="{% url 'index' %}"><img class="mb-4" src="{% static 'img/logo_bookstop.png' %}" alt="" width="72" height="72"></a>
-        
+        <a href="{% url 'home' %}"><img class="mb-4" src="{% static 'img/logo_bookstop.png' %}" alt="" width="72" height="72"></a>
+
         <h1 class="h3 mb-3 font-weight-normal" id="colorH1">BookStop</h1>
         <!--<p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, Firefox, and IE 10/11 (prefixed).</a></p>-->
       </div>
@@ -83,11 +83,11 @@
       {% load socialaccount %}
       <a class="btn btn-lg btn-outline-success btn-block btn-outline" href="{% provider_login_url 'google' %}" role="button" id="btnGoogle">
         <img src="https://img.icons8.com/color/16/000000/google-logo.png"> Iniciar sesión con google</a>
-      
-      <a class="btn btn-lg btn-outline-success btn-block" href="{% url 'signup' %}" role="button" id="btnRegistrarse">Crear cuenta &raquo;</a>
-      
 
-      
+      <a class="btn btn-lg btn-outline-success btn-block" href="{% url 'signup' %}" role="button" id="btnRegistrarse">Crear cuenta &raquo;</a>
+
+
+
       <p class="mt-5 mb-3 text-muted text-center">&copy; BookStop - 2020</p>
     </form>
 </body>
